@@ -6,6 +6,11 @@ import { theme } from '../../theme'
 import { styles } from './styles'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 import { Options } from '../Options'
+import { feedbackTypes } from '../../utils/feedbackTypes'
+import { Form } from '../Form'
+import { Success } from '../Success'
+
+export type FeedbackType = keyof typeof feedbackTypes
 
 function Widget () {
    const bottomSheetRef = useRef<BottomSheet>(null)
@@ -32,7 +37,7 @@ function Widget () {
             backgroundStyle={styles.modal}
             handleIndicatorStyle={styles.indicator}
          >
-            <Options />
+            <Success />
          </BottomSheet>
       </>
    )
